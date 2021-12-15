@@ -42,13 +42,16 @@ app.get('/help', (req, res) =>{
 })
 
 app.get('/weather', (req, res) => {
+    
     if(!req.query.address){
         return res.send('you have to input a location')
     }
+    
     forecast(req.query.address, (error, {temp, pressure, humidity}={}) => {
         if (error){
             return res.send({error})
         }
+        
         res.send({
             temperature: temp,
             pressure: pressure,
