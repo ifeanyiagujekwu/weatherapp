@@ -12,7 +12,6 @@ const forecast = (address, callback) => {
             callback('unable to get weather of the specified loaction', undefined)
         }else{
             callback(undefined,  response.body.main)
-
         }
         
     })
